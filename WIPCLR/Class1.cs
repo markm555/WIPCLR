@@ -28,7 +28,7 @@ namespace WIPCLR
             // Create a request for the URL.
 
             string apikey;
-            apikey = "<YourKeyHere";
+            apikey = "<YourKeyHere>";
             WebRequest request = WebRequest.Create(
               "https://api.whatismyip.com/ip.php?key=" + apikey);
             request.Credentials = CredentialCache.DefaultCredentials;
