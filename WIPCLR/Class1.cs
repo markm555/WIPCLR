@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-
 using System.Data;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlTypes;
@@ -29,22 +28,19 @@ namespace WIPCLR
             // Create a request for the URL.
 
             string apikey;
-                apikey = "daeed0a263c23c2a5a9b20e8bf1d6636";
-                WebRequest request = WebRequest.Create(
-                  "https://api.whatismyip.com/ip.php?key=" + apikey);
-                request.Credentials = CredentialCache.DefaultCredentials;
+            apikey = "<YourKeyHere";
+            WebRequest request = WebRequest.Create(
+              "https://api.whatismyip.com/ip.php?key=" + apikey);
+            request.Credentials = CredentialCache.DefaultCredentials;
 
-                WebResponse response = request.GetResponse();
+            WebResponse response = request.GetResponse();
 
-                using (Stream dataStream = response.GetResponseStream())
+            using (Stream dataStream = response.GetResponseStream())
                 {
                     StreamReader reader = new StreamReader(dataStream);
                     string responseFromServer = reader.ReadToEnd();
                     return responseFromServer;
                 }
-            //response.Close();
-
-
         }
     }
 }
