@@ -20,7 +20,7 @@ namespace WIPCLR
             // Create a WebPermission that gives permissions to all the hosts containing the same host fragment.
             WebPermission myWebPermission = new WebPermission(NetworkAccess.Connect, myRegex);
 
-            //Add connect privileges for a www.adventure-works.com.
+            //Add connect privileges for API
             myWebPermission.AddPermission(NetworkAccess.Connect, "http://api.whatsmyip.com");
 
             // Check whether all callers higher in the call stack have been granted the permission.
